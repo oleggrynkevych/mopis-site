@@ -1,0 +1,200 @@
+@use '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.price-block {
+    width: 100%;
+    margin-bottom: 192px;
+    color: $black;
+    position: relative;
+    z-index: 2;
+    @include mixins.flex(row, center, center);
+
+    @media (max-width: 850px) {
+        margin-bottom: 96px;
+    }
+
+
+    .price-block-container {
+        width: 100%;
+        max-width: 1200px;
+        @include mixins.flex(column, flex-start, center);
+
+        @media (max-width: 1260px) {
+            width: calc(100% - 40px);
+            margin: auto 20px;
+        }
+
+        @media (max-width: 500px) {
+            width: calc(100% - 32px);
+            margin: auto 16px;
+        }
+
+
+        h3 {
+            margin: 0 0 48px 0;
+            text-transform: uppercase;
+            @include mixins.font(Forum, 60px, normal, 400, 120%);
+
+            @media (max-width: 500px) {
+                margin: 0 0 32px 0;
+                @include mixins.font(Forum, 40px, normal, 400, 120%);
+            }
+        }
+
+        .price-block-info-box {
+            width: 100%;
+            margin-bottom: 20px;
+            @include mixins.flex(row, space-between, flex-start);
+
+            @media (max-width: 1260px) {
+                gap: 20px;
+                @include mixins.flex(column, flex-start, center);
+            }
+        }
+
+        .price-block-mentoring {
+            width: calc(100% - 48px);
+            background-color: $block-color;
+            margin-bottom: 48px;
+            padding: 40px 24px 24px 24px;
+            position: relative;
+            @include mixins.flex(row, space-between, flex-start);
+
+            @media (max-width: 1260px) {
+                width: 339px;
+                gap: 26px;
+                padding: 40px 24px 124px 24px;
+                @include mixins.flex(column, flex-start, flex-start);
+            }
+            
+            @media (max-width: 500px) {
+                width: calc(100% - 48px);
+                gap: 16px;
+            }
+
+            .price-block-mentoring-title-box {
+                align-self: stretch;
+                @include mixins.flex(column, space-between, flex-start);
+
+                .price-block-mentoring-title {
+
+                    @media (max-width: 1260px) {
+                        width: 100%;
+                        @include mixins.flex(row, space-between, center);
+                    }
+
+                    h4 {
+                        margin: 0 0 16px 0;
+                        @include mixins.font(Forum, 50px, normal, 400, 45px);
+
+                        @media (max-width: 1260px) {
+                            margin: 0;
+                            @include mixins.font(Forum, 32px, normal, 400, 21.6px);
+                        }
+                    }
+
+                    h5 {
+                        margin: 0;
+                        @include mixins.font(Forum, 18px, normal, 400, 21.6px);
+                    }
+                }
+
+                button {
+                    width: 311px;
+                    height: 82px;
+                    background-color: $transparent;
+                    outline: none;
+                    border-radius: 1000px;
+                    border: 1px solid $black;
+                    cursor: pointer;
+                    transition: all 0.4s ease-in-out;
+                    @include mixins.font(Forum, 22px, normal, 400, 110%);
+
+                    @media (max-width: 1260px) {
+                        width: calc(100% - 48px);
+                        height: 74px;
+                        position: absolute;
+                        bottom: 24px;
+                    }
+            
+                    &:hover {
+                        background-color: $black;
+                        color: $main-color;
+                    }
+                }
+            }
+
+            .price-block-mentoring-info-box {
+
+                .price-block-mentoring-info {
+                    margin-bottom: 26px;
+                    @include mixins.flex(column, flex-start, flex-start);
+
+                    span {
+                        min-width: 100%;
+                        max-width: 560px;
+                        padding: 12px 0px;
+                        border-bottom: 1px solid $line-color;
+                        @include mixins.font(Forum, 18px, normal, 400, 21.6px);
+                    }
+                }
+
+
+                .price-block-mentoring-price {
+                    gap: 32px;
+                    @include mixins.flex(row, flex-end, center);
+
+                    @media (max-width: 1260px) {
+                        width: 100%;
+                        height: 56px;
+                        @include mixins.flex(row, space-between, center);
+                    }
+
+                    span:first-child {
+                        @include mixins.font(Forum, 50px, normal, 400, 60px);
+
+                        @media (max-width: 1260px) {
+                            @include mixins.font(Forum, 32px, normal, 400, 60px);
+                        }
+                    }
+
+                    span:last-child {
+                        width: 71px;
+                        @include mixins.font(Forum, 16px, normal, 400, 120%);
+
+                        @media (max-width: 1260px) {
+                            width: 53px;
+                            @include mixins.font(Forum, 12px, normal, 400, 120%);
+                        }
+                    }
+                }
+            }
+        }
+
+        .price-block-question-button {
+            button {
+                width: 237px;
+                height: 82px;
+                background-color: $transparent;
+                outline: none;
+                border-radius: 1000px;
+                border: 1px solid $main-color;
+                color: $main-color;
+                cursor: pointer;
+                transition: all 0.4s ease-in-out;
+                @include mixins.font(Forum, 22px, normal, 400, 110%);
+        
+                &:hover {
+                    background-color: $main-color;
+                    color: $black;
+                }
+        
+                @media (max-width: 880px) {
+                    width: 241px;
+                    height: 74px;
+                }
+            }
+            
+        }
+    }
+}

@@ -1,0 +1,267 @@
+@use '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.footer {
+    width: 100%;
+    height: calc(100dvh - 80px);
+    padding: 40px 0px;
+    background-color: $black;
+    position: sticky;
+    left: 0;
+    bottom: -1px;
+    z-index: 1;
+    @include mixins.flex(row, center, center);
+
+    @media (max-width: 1020px) {
+        min-height: unset;
+    }
+
+    @media (max-width: 720px) {
+        height: auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .footer-container {
+        width: calc(100% - 80px);
+        height: 100%;
+        max-width: 1360px;
+        @include mixins.flex(column, space-between, center);
+
+        @media (max-width: 720px) {
+            gap: 64px;
+        }
+
+        @media (max-width: 500px) {
+            width: calc(100% - 32px);
+        }
+
+        .footer-container-head {
+            width: 100%;
+            @include mixins.flex(row, space-between, flex-start);
+
+            @media (max-width: 600px) {
+                gap: 32px;
+                @include mixins.flex(column, flex-start, flex-start);
+            }
+
+            .footer-container-head-text {
+                width: 496px;
+                color: $block-color;
+                @include mixins.font(Forum, 32px, normal, 400, 120%);
+
+                @media (max-width: 1000px) {
+                    width: 287px;
+                }
+
+                @media (max-width: 600px) {
+                    width: 100%;
+                    @include mixins.font(Forum, 22px, normal, 400, 120%);
+                }
+            }
+
+            .footer-container-buttons {
+                gap: 32px;
+                @include mixins.flex(row, space-between, flex-start);
+
+                @media (max-width: 1000px) {
+                    gap: 16px;
+                    @include mixins.flex(column, flex-start, flex-start);
+                }
+
+                @media (max-width: 600px) {
+                    width: 100%;
+                    @include mixins.flex(row, space-between, flex-start);
+                }
+            }
+        }
+
+        .footer-container-info {
+            width: 100%;
+            height: 37px;
+            color: $block-color;
+            border-top: 1px solid $block-color;
+            @include mixins.flex(row, space-between, flex-end);
+            @include mixins.font(Forum, 14px, normal, 400, 120%);
+
+            @media (max-width: 850px) {
+                height: auto;
+                padding-top: 24px;
+                gap: 32px;
+                @include mixins.flex(column, flex-start, center);
+            }
+
+            .footer-container-info-rights {
+                opacity: 0.5;
+            }
+
+            .footer-container-info-policy {
+                gap: 24px;
+                @include mixins.flex(row, center, center);
+
+                @media (max-width: 900px) {
+                    gap: 16px;
+                }
+
+                .footer-container-info-policy-item {
+                    overflow: hidden;
+
+                    span {
+                        color: $block-color;
+                        display: block;
+                        cursor: pointer;
+                    }
+
+                    div{
+                        width: 100%;
+                        height: 1.5px;
+                        background-color: $block-color;
+                        opacity: 0.1;
+                        transform: translateX(-100%);
+                        transition: transform 0.4s, opacity 0.7s;
+                    }
+                }
+
+                .footer-container-info-policy-item:hover div {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+
+            .footer-container-info-dev {
+                gap: 14px;
+                @include mixins.flex(row, space-between, center);
+
+                .footer-container-info-dev-text {
+                    opacity: 0.5;
+                }
+
+                .footer-container-info-dev-link {
+                    overflow: hidden;
+
+                    span {
+                        color: $block-color;
+                        display: block;
+                        cursor: pointer;
+                    }
+
+                    div{
+                        width: 100%;
+                        height: 1.5px;
+                        background-color: $block-color;
+                        opacity: 0.1;
+                        transform: translateX(-100%);
+                        transition: transform 0.4s, opacity 0.7s;
+                    }
+                }
+
+                .footer-container-info-dev-link:hover div {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        }
+
+        .footer-logo {
+            width: 100%;
+        }
+
+        .footer-container-bottom {
+            width: 100%;
+            color: $block-color;
+            text-transform: uppercase;
+            @include mixins.flex(row, space-between, flex-end);
+
+            @media (max-width: 850px) {
+                gap: 24px;
+                @include mixins.flex(column, space-between, flex-start);
+            }
+
+            .footer-container-bottom-item {
+                gap: 4px;
+                @include mixins.flex(column, space-between, flex-start);
+
+                span:first-child {
+                    opacity: 0.5;
+                    @include mixins.font(Forum, 14px, normal, 400, 120%);
+                }
+
+                span:last-child {
+                    @include mixins.font(Forum, 18px, normal, 400, 120%);
+                }
+            }
+        }
+    }
+}
+
+
+// Styles For Social Media Block
+
+.footer-container-buttons {
+
+    .social-media-button {
+        width: 152px;
+        height: 52px;
+        padding: 4px 6px 4px 6px;
+        border-radius: 10000px;
+        border: 1px solid $block-color;
+        cursor: pointer;
+        transition: all 0.5 ease-in-out;
+        position: relative;
+        gap: 24px;
+        @include mixins.flex(row, flex-end, center);
+
+        @media (max-width: 600px) {
+            width: 147px;
+        }
+
+        div {
+            width: 48px;
+            height: 48px;
+            border-radius: 10000px;
+            background-color: $main-color;
+            position: absolute;
+            left: 6px;
+            transition: all 0.5s ease-in-out;
+            @include mixins.flex(row, flex-start, center);
+
+            img {
+                transition: all 0.3s ease-in-out;
+                margin-left: 12px;
+            }
+        }
+
+        span {
+            color: $main-color;
+            margin-right: 18px;
+            position: relative;
+            z-index: 3;
+            transition: color 0.3s ease-in-out, margin-right 0.3s ease-in-out;
+            @include mixins.font(Forum, 16px, normal, 400, 120%);
+        }
+    }
+
+    .social-media-button:hover {
+        @include mixins.flex(row, flex-end, center);
+
+        span {
+            color: $black;
+            margin-right: 24px;
+        }
+
+        div {
+            width: 152px;
+            transition: all 0.5 ease-in-out;
+            @include mixins.flex(row, flex-start, center);
+
+            @media (max-width: 600px) {
+                width: 146px;
+            }
+
+            img {
+                margin-left: 20px;
+            }
+        }
+
+    }
+}

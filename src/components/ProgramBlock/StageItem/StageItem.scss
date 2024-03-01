@@ -1,0 +1,420 @@
+@use '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+
+
+.stage-item {
+    width: 100%;
+    @include mixins.flex(column, flex-start, flex-start);
+
+    @media (max-width: 650px) {
+        @include mixins.flex(column, flex-start, center);
+    }
+
+    .stage-item-content {
+        width: calc(100% - 80px);
+        height: 100%;
+        min-height: 300px;
+        padding: 40px 40px;
+        background-color: $block-color;
+        @include mixins.flex(row, space-between, flex-start);
+
+        @media (max-width: 1200px) {
+            min-height: 360px;
+        }
+
+        @media (max-width: 850px) {
+            min-height: 200px;
+            gap: 32px;
+            @include mixins.flex(column, flex-start, flex-start);
+        }
+
+        @media (max-width: 500px) {
+            width: calc(100% - 32px);
+            padding: 24px 16px;
+        }
+    }
+
+    .stage-item-add-materials-title {
+        margin: 24px 0 0 0;
+        text-transform: uppercase;
+        @include mixins.font(Forum, 18px, normal, 400, 120%);
+
+        @media (max-width: 850px) {
+            @include mixins.font(Forum, 16px, normal, 400, 120%);
+        }
+
+        &.hidden {
+            display: none;
+        }
+    }
+
+    .stage-item-add-materials {
+        display: none;
+        width: 100%;
+        margin-top: 16px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s ease-in-out;
+        flex-wrap: wrap;
+        gap: 8px;
+
+        &.open {
+            @include mixins.flex(row, flex-start, flex-start);
+
+            @media (max-width: 1215px) {
+                width: 90%;
+            }
+
+            @media (max-width: 1100px) {
+                width: 100%;
+            }
+
+            @media (max-width: 970px) {
+                width: 90%;
+            }
+
+            @media (max-width: 900px) {
+                width: 100%;
+            }
+
+            @media (max-width: 800px) {
+                width: 90%;
+            }
+
+            @media (max-width: 650px) {
+                width: 100%;
+                padding-top: 46px;
+                @include mixins.flex(row, center, flex-start);
+            }
+        }
+    }
+}
+
+
+// Styles For Program Card
+
+.stage-item-content {
+    .stage-item-content-main {
+        width: 100%;
+        align-self: stretch;
+        border-right: 1px solid $line-color;
+        padding-right: 32px;
+        @include mixins.flex(column, space-between, flex-start);
+
+        @media (max-width: 850px) {
+            border-right: none;
+            padding-right: 0;
+        }
+
+        .stage-item-content-main-title {
+            align-self: stretch;
+            @include mixins.flex(row, space-between, flex-start);
+
+            @media (max-width: 1200px) {
+                gap: 16px;
+                @include mixins.flex(column, flex-start, flex-start);
+            }
+
+            h4 {
+                width: 400px;
+                margin: 0;
+                @include mixins.font(Forum, 50px, normal, 400, 90%);
+
+                @media (max-width: 1200px) {
+                    width: 100%;
+                    order: 2;
+                    @include mixins.font(Forum, 40px, normal, 400, 100%);
+                }
+
+                @media (max-width: 500px) {
+                    @include mixins.font(Forum, 32px, normal, 400, 120%);
+                }
+            }
+
+            .stage-item-content-block-number {
+                width: 96px;
+                height: 32px;
+                color: $accent-color;
+                gap: 5px;
+                border-radius: 1000px 0px 0px 1000px;
+                border: 1px solid $accent-color;
+                @include mixins.font(Forum, 18px, normal, 400, 100%);
+                @include mixins.flex(row, center, center);
+
+                @media (max-width: 850px) {
+                    border-radius: 1000px;
+                }
+
+                @media (max-width: 500px) {
+                    width: 76px;
+                    height: 28px;
+                    @include mixins.font(Forum, 12px, normal, 400, 100%);
+                }
+
+                &.pro {
+                    border-radius: 0 0 0 0;
+                    position: relative;
+
+                    @media (max-width: 1200px) {
+                        margin-left: 160px;
+                    }
+
+                    @media (max-width: 850px) {
+                        border-radius: 0px 1000px 1000px 0px;
+                    }
+
+                    @media (max-width: 500px) {
+                        margin-left: 115px;
+                    }
+
+                    &:before {
+                        content: 'ТАРИФ PRO & VIP';
+                        width: 158px;
+                        height: 32px;
+                        background-color: $accent-color;
+                        color: $main-color;
+                        border-radius: 1000px 0px 0px 1000px;
+                        border: 1px solid $accent-color;
+                        position: absolute;
+                        left: -160px;
+                        top: -1px;
+                        @include mixins.font(Forum, 18px, normal, 400, 100%);
+                        @include mixins.flex(row, center, center);
+
+                        @media (max-width: 500px) {
+                            width: 113px;
+                            height: 28px;
+                            left: -115px;
+                            @include mixins.font(Forum, 12px, normal, 400, 100%);
+                        }
+                    }
+                }
+            }
+        }
+
+        p {
+            width: 470px;
+            margin: 0;
+            @include mixins.font(Forum, 26px, normal, 400, 120%);
+
+            @media (max-width: 1140px) {
+                width: 100%;
+            }
+
+            @media (max-width: 850px) {
+                display: none;
+            }
+        }
+    }
+
+    .stage-item-content-description {
+        padding-left: 32px;
+        gap: 16px;
+        @include mixins.flex(column, flex-start, flex-start);
+
+        @media (max-width: 850px) {
+            padding-left: 0;
+        }
+
+
+        .stage-item-content-step {
+            gap: 11px;
+            @include mixins.flex(row, flex-start, flex-start);
+
+            span {
+                width: 340px;
+                @include mixins.font(Forum, 18px, normal, 400, 120%);
+
+                @media (max-width: 850px) {
+                    width: auto;
+                    @include mixins.font(Forum, 16px, normal, 400, 120%);
+                }
+            }
+        }
+    }
+
+    .stage-item-content-mobile-text {
+        display: none;
+
+        @media (max-width: 850px) {
+            margin: 0 0 0 0;
+            display: block;
+            @include mixins.font(Forum, 22px, normal, 400, 120%);
+        }
+    }
+}
+
+
+// Styles For Add Materials
+
+.stage-item-add-materials {
+    .stage-item-add-materials-button {
+        width: auto;
+        height: 48px;
+        padding: 0 18px 0 12px;
+        color: $black;
+        border-radius: 10000px;
+        border: 1px solid $line-color;
+        gap: 4px;
+        transition: max-height 0.3s ease-in-out;
+        @include mixins.font(Forum, 16px, normal, 400, 120%);
+        @include mixins.flex(row, space-between, center);
+
+        @media (max-width: 850px) {
+            height: 38px;
+            padding: 0 16px 0 12px;
+            @include mixins.font(Forum, 12px, normal, 400, 120%);
+        }
+
+        &.close {
+            display: none;
+        }
+
+        &:hover {
+            background: $block-color;
+        }
+
+        img {
+            @media (max-width: 850px) {
+                width: 22px;
+            }
+        }
+
+        span {
+            white-space: nowrap;
+
+            @media (max-width: 650px) {
+                display: inline-block;
+                max-width: 244px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+
+    .stage-item-add-materials-button-open {
+        width: 140px;
+        height: 40px;
+        padding: 4px 6px 4px 6px;
+        background-color: $black;
+        border-radius: 10000px;
+        border: 1px solid $block-color;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.5 ease-in-out;
+        @include mixins.font(Forum, 16px, normal, 400, 120%);
+        @include mixins.flex(row, flex-end, center);
+
+        @media (max-width: 850px) {
+            height: 30px;
+        }
+
+        @media (max-width: 650px) {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &.big-number {
+            div {
+                span {
+                    margin-left: 6px;
+                }
+            }
+        }
+
+        &.hidden {
+            display: none;
+        }
+
+        &.open {
+            opacity: 0;
+        }
+
+        div {
+            width: 36px;
+            height: 36px;
+            border-radius: 10000px;
+            background-color: $main-color;
+            position: absolute;
+            left: 6px;
+            transition: all 0.5s ease-in-out;
+            @include mixins.flex(row, flex-start, center);
+
+            @media (max-width: 850px) {
+                height: 26px;
+            }
+
+            span {
+                color: $black;
+                transition: all 0.3s ease-in-out;
+                margin-left: 10px;
+            }
+        }
+
+        span {
+            color: $main-color;
+            margin-right: 12px;
+            position: relative;
+            z-index: 3;
+            transition: color 0.3s ease-in-out, margin-right 0.3s ease-in-out;
+        }
+    }
+
+    .stage-item-add-materials-button-open:hover {
+        span {
+            color: $black;
+            margin-right: 14px;
+        }
+
+        div {
+            width: 140px;
+            transition: all 0.5 ease-in-out;
+
+            span {
+                margin-left: 15px;
+            }
+        }
+    }
+
+    .stage-item-add-materials-button-close {
+        width: 152px;
+        height: 48px;
+        border-radius: 10000px;
+        border: 1px solid $black;
+        background-color: $black;
+        color: $main-color;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        @include mixins.font(Forum, 16px, normal, 400, 120%);
+        @include mixins.flex(row, center, center);
+
+        @media (max-width: 850px) {
+            height: 38px;
+        }
+
+        @media (max-width: 650px) {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &.open {
+            @media (max-width: 650px) {
+                @include mixins.flex(row, center, center);
+            }
+        }
+
+        &.hidden {
+            display: none;
+        }
+
+        &:hover {
+            background-color: $transparent;
+            color: $black;
+        }
+    }
+}

@@ -1,0 +1,199 @@
+@use '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+
+.price-item {
+    width: 339px;
+    padding: 40px 24px 24px 24px;
+    background-color: $block-color;
+    gap: 26px;
+    @include mixins.flex(column, flex-start, center);
+
+    @media (max-width: 500px) {
+        width: calc(100% - 48px);
+        gap: 16px;
+    }
+
+    a {
+        color: $black;
+    }
+
+
+    // Title
+
+    .price-item-title {
+        width: 100%;
+        @include mixins.flex(row, space-between, center);
+
+        h4 {
+            margin: 0;
+            @include mixins.font(Forum, 50px, normal, 400, 90%);
+
+            @media (max-width: 500px) {
+                @include mixins.font(Forum, 32px, normal, 400, 90%);
+            }
+        }
+
+        span {
+            @include mixins.font(Forum, 18px, normal, 400, 100%);
+        }
+    }
+
+
+    // Description
+
+    .price-item-description {
+        width: 100%;
+        @include mixins.flex(column, flex-start, flex-start);
+
+        span {
+            width: 100%;
+            padding: 12px 0px;
+            border-bottom: 1px solid $line-color;
+            @include mixins.font(Forum, 18px, normal, 400, 120%);
+
+            @media (max-width: 500px) {
+                @include mixins.font(Forum, 16px, normal, 400, 120%);
+            }
+        }
+
+        .price-item-description-text {
+            &.pro {
+                position: relative;
+
+                &:after {
+                    content: 'PRO';
+                    width: 56px;
+                    height: 28px;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background-color: $accent-color;
+                    color: $main-color;
+                    border-radius: 1000px;
+                    border: 1px solid $accent-color;
+                    @include mixins.flex(row, center, center);
+                    @include mixins.font(Forum, 18px, normal, 400, 100%);
+                }
+            }
+        }
+
+        .price-item-description-text-opacity{
+            opacity: 0.2;
+        }
+    }
+
+
+    // Price
+
+    .price-item-value-box {
+        width: 100%;
+        @include mixins.flex(row, space-between, center);
+
+        .price-item-value {
+            gap: 16px;
+            @include mixins.flex(row, flex-start, flex-start);
+
+            &.hidden {
+                span:last-child {
+                    display: none;
+                }
+            }
+
+            span:first-child {
+                @include mixins.font(Forum, 50px, normal, 400, 120%);
+
+                @media (max-width: 500px) {
+                    @include mixins.font(Forum, 32px, normal, 400, 100%);
+                }
+            }
+
+            span:last-child {
+                opacity: 0.5;
+                text-decoration: line-through;
+                text-decoration-thickness: 1px;
+                @include mixins.font(Forum, 24px, normal, 400, 120%); 
+
+                @media (max-width: 500px) {
+                    @include mixins.font(Forum, 12px, normal, 400, 120%);
+                }
+            }
+        }
+
+        .price-item-value-text {
+            width: 71px;
+            @include mixins.font(Forum, 16px, normal, 400, 120%);
+
+            @media (max-width: 500px) {
+                width: 53px;
+                @include mixins.font(Forum, 12px, normal, 400, 120%);
+            }
+        }
+    }
+
+
+    // Button 
+
+    .price-item-button-link {
+        width: 100%;
+        border-radius: 1000px;
+    }
+
+    .price-item-button {
+        width: 100%;
+        height: 82px;
+        background-color: $transparent;
+        outline: none;
+        border-radius: 1000px;
+        border: 1px solid $accent-color;
+        color: $accent-color;
+        cursor: pointer;
+        transition: all 0.4s ease-in-out;
+        @include mixins.font(Forum, 22px, normal, 400, 110%);
+
+        @media (max-width: 500px) {
+           height: 74px;
+        }
+
+        &:hover {
+            background-color: $accent-color;
+            color: $main-color;
+        }
+    }
+
+
+    // Reservation
+
+    .price-item-reservation {
+        overflow: hidden;
+        @include mixins.font(Forum, 18px, normal, 400, 110%);
+
+        @media (max-width: 500px) {
+            @include mixins.font(Forum, 16px, normal, 400, 120%);
+        }
+
+        span {
+            display: block;
+            cursor: pointer;
+            transition: all 0.4s ease-in-out;
+        }
+
+        div{
+            width: 100%;
+            height: 1px;
+            background-color: $accent-color;
+            opacity: 0.1;
+            transform: translateX(-100%);
+            transition: transform 0.4s, opacity 0.7s;
+        }
+    }
+
+    .price-item-reservation:hover div {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .price-item-reservation:hover span {
+        color: $accent-color;
+    }
+}

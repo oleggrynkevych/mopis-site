@@ -1,0 +1,160 @@
+@use '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+
+.result-block {
+    width: 100%;
+    margin: -1082px 0 162px 0;
+    color: $main-color;
+    @include mixins.flex(row, center, center);
+
+    @media (max-width: 1260px) {
+        margin: -1147px 0 162px 0;
+    }
+
+    @media (max-width: 850px) {
+        margin: -1147px 0 66px 0;
+    }
+
+    @media (max-width: 600px) {
+        margin: -533px 0 66px 0;
+    }
+
+    .result-block-container {
+        width: calc(100% - 240px);
+        height: calc(2387px - 1082px);
+        max-width: 1200px;
+        padding: 1082px 120px 0 120px;
+        background-color: $black;
+        border-radius: 720px 720px 0px 0px;
+        position: relative;
+        @include mixins.flex(row, space-between, flex-start);
+
+        @media (max-width: 1260px) {
+            width: calc(100% - 40px);
+            height: calc(2387px - 1147px);
+            padding: 1147px 20px 0 20px;
+        }
+
+        @media (max-width: 850px) {
+            height: calc(2527px - 1147px);
+            gap: 32px;
+            @include mixins.flex(column, flex-start, center);
+        }
+
+        @media (max-width: 600px) {
+            height: calc(1932px - 533px);
+            padding: 533px 20px 0 20px;
+            @include mixins.flex(column, flex-start, flex-start);
+        }
+
+        @media (max-width: 500px) {
+            width: calc(100% - 32px);
+            padding: 533px 16px 0 16px;
+        }
+
+
+        h3 {
+            width: 370px;
+            height: 216px;
+            margin: 0 0 95px 0;
+            text-transform: uppercase;
+            position: sticky;
+            top: 87px;
+            @include mixins.font(Forum, 90px, normal, 400, 120%);
+
+            @media (max-width: 1050px) {
+                width: 247px;
+                height: 144px;
+                margin: 0 0 25px 0;
+                @include mixins.font(Forum, 60px, normal, 400, 120%);
+            }
+
+            @media (max-width: 850px) {
+                width: 100%;
+                height: auto;
+                margin: 0 0 0 0;
+                text-align: center;
+                position: static;
+            }
+
+            @media (max-width: 600px) {
+                width: 165px;
+                text-align: start;
+                @include mixins.font(Forum, 40px, normal, 400, 120%);
+            }
+        }
+
+        .result-block-info-box {
+            @include mixins.flex(column, flex-start, flex-start);
+
+            @media (max-width: 600px) {
+                width: 100%;
+                gap: 24px;
+            }
+
+            .result-block-info-item {
+                width: 541px;
+                height: 106px;
+                padding: 32px 24px;
+                border-bottom: 1px solid $main-color;
+                gap: 32px;
+                @include mixins.flex(row, flex-start, flex-start);
+
+                @media (max-width: 1050px) {
+                    width: 483px;
+                }
+
+                @media (max-width: 600px) {
+                    width: calc(100% - 48px);
+                    height: auto;
+                    padding: 0px 24px 24px 24px;
+                    gap: 16px;
+                    @include mixins.flex(column, flex-start, flex-start);
+                }
+
+
+                .result-block-info-number {
+                    opacity: 0.2;
+                    @include mixins.font(Forum, 40px, normal, 400, 120%);
+
+                    @media (max-width: 600px) {
+                        @include mixins.font(Forum, 22px, normal, 400, 120%);
+                    }
+                }
+
+                .result-block-info-description {
+                    height: 100%;
+                    @include mixins.flex(column, space-between, flex-start);
+
+                    @media (max-width: 600px) {
+                        width: 100%;
+                        gap: 12px;
+                    }
+                    
+                    span:first-child {
+                        @include mixins.font(Forum, 40px, normal, 400, 120%);
+
+                        @media (max-width: 600px) {
+                            @include mixins.font(Forum, 32px, normal, 400, 90%);
+                        }
+                    }
+
+                    span:last-child {
+                        width: 330px;
+                        @include mixins.font(Forum, 18px, normal, 400, 120%);
+
+                        @media (max-width: 600px) {
+                            width: 70%;
+                            @include mixins.font(Forum, 16px, normal, 400, 120%);
+                        }
+
+                        @media (max-width: 450px) {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

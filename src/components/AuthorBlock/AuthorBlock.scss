@@ -1,0 +1,133 @@
+@use '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.author-block {
+    width: 100%;
+    margin-bottom: 162px;
+    color: $black;
+    @include mixins.flex(row, center, center);
+
+    @media (max-width: 850px) {
+        margin-bottom: 66px;
+    }
+
+    .author-block-container {
+        width: 100%;
+        max-width: 1200px;
+        @include mixins.flex(column, flex-start, center);
+
+        @media (max-width: 1260px) {
+            width: calc(100% - 40px);
+        }
+
+        @media (max-width: 500px) {
+            width: calc(100% - 32px);
+        }
+
+
+        h3 {
+            margin: 0 0 48px 0;
+            text-transform: uppercase;
+            @include mixins.font(Forum, 90px, normal, 400, 120%);
+
+            @media (max-width: 750px) {
+                margin: 0 0 32px 0;
+                @include mixins.font(Forum, 40px, normal, 400, 120%);
+            }
+        }
+
+        .author-block-box-info {
+            width: 100%;
+            gap: 19px;
+            @include mixins.flex(row, center, flex-start);
+
+            @media (max-width: 750px) {
+                gap: 48px;
+                @include mixins.flex(column, flex-start, center);
+            }
+        }
+    }
+}
+
+
+// Author Card Styles
+
+.author-item {
+    @include mixins.flex(column, flex-start, flex-start);
+
+    @media (max-width: 1050px) {
+        width: calc(50% - 8px);
+    }
+
+    @media (max-width: 650px) {
+        width: 360px;
+    }
+
+    @media (max-width: 400px) {
+        width: 100%;
+    }
+
+    .author-item-photo {
+        width: 489px;
+        height: 527px;
+        border-radius: 295px 295px 0px 0px;
+        margin-bottom: 32px;
+
+        @media (max-width: 1050px) {
+            width: unset;
+            height: 400px;
+            align-self: stretch;
+        }
+
+        @media (max-width: 650px) {
+           height: 350px;
+        }
+
+        @media (max-width: 500px) {
+            margin-bottom: 16px;
+        }
+
+        &.author1 {
+            background-image: url('../../images/author-Alisa.jpeg');
+            background-repeat: no-repeat;
+            background-size: 180% auto;
+            background-position: 48% 33%;
+        }
+
+        &.author2 {
+            background-image: url('../../images/author-mopis.jpeg');
+            background-repeat: no-repeat;
+            background-size: 220% auto;
+            background-position: 52% 40%;
+        }
+    }
+
+    .author-item-nickname {
+        margin-bottom: 4px;
+        @include mixins.font(Forum, 14px, normal, 400, 120%);
+    }
+
+    .author-item-name {
+        margin-bottom: 16px;
+        @include mixins.font(Forum, 40px, normal, 400, 120%);
+
+        @media (max-width: 500px) {
+            margin-bottom: 8px;
+            @include mixins.font(Forum, 32px, normal, 400, 90%);
+        }
+    }
+
+    p {
+        width: 350px;
+        margin: 0;
+        @include mixins.font(Forum, 18px, normal, 400, 120%);
+
+        @media (max-width: 750px) {
+            width: 100%;
+        }
+
+        @media (max-width: 500px) {
+            @include mixins.font(Forum, 16px, normal, 400, 120%);
+        }
+    }
+}

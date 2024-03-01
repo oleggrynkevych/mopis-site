@@ -1,0 +1,467 @@
+@use '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+
+.respond-item {
+    width: 323px;
+    min-width: 323px;
+    margin-right: 20px;
+    padding: 48px 32px;
+    background-color: $block-color;
+    color: black;
+    @include mixins.flex(column, flex-start, flex-start);
+
+    @media (max-width: 720px) {
+        width: 268px;
+        min-width: 268px;
+        padding: 32px 16px 16px 16px;
+    }
+
+    .respond-item-head {
+        width: 100%;
+        margin-bottom: 24px;
+        gap: 24px;
+        @include mixins.flex(row, flex-start, flex-start);
+
+        .respond-item-photo {
+            width: 82px;
+            height: 99px;
+            border-radius: 50px 50px 0px 0px;
+        }
+
+        .respond-item-person {
+            align-self: stretch;
+            @include mixins.flex(column, space-between, flex-start);
+
+            span:first-child {
+                color: $accent-color;
+                @include mixins.font(Forum, 14px, normal, 400, 120%);
+            }
+            
+            span:last-child {
+                width: 50%;
+                @include mixins.font(Forum, 32px, normal, 400, 110%);
+                
+                @media (max-width: 720px) {
+                    @include mixins.font(Forum, 28px, normal, 400, 110%);
+                }
+            }
+        }
+    }
+
+    p {
+        width: 100%;
+        margin: 0 0 16px 0;
+        overflow: hidden;
+        display: block;
+        min-height: 127px;
+        // -webkit-line-clamp: 6;
+        // -webkit-box-orient: vertical;
+        // text-overflow: ellipsis;
+        transition: all 0.4s ease-in-out;
+        @include mixins.font(Forum, 18px, normal, 400, 120%);
+
+        @media (max-width: 720px) {
+            // -webkit-line-clamp: 7;
+            min-height: 132px;
+            @include mixins.font(Forum, 16px, normal, 400, 120%);
+        }
+
+        &.open-text {
+            display: block;
+            // -webkit-line-clamp: auto;
+        }
+    }
+
+    .respond-item-button {
+        text-transform: uppercase;
+        overflow: hidden;
+        @include mixins.font(Forum, 18px, normal, 400, 120%);
+        @include mixins.flex(column, flex-start, flex-start);
+
+        @media (max-width: 720px) {
+            @include mixins.font(Forum, 16px, normal, 400, 120%);
+        }
+
+        &.open {
+            .respond-item-button-open {
+                display: none;
+            }
+    
+            .respond-item-button-close {
+                display: block;
+            }
+        }
+
+        &.hidden {
+            visibility: hidden;
+        }
+
+        span {
+            transition: color 0.4s ease-in-out;
+            cursor: pointer;
+        }
+
+        div{
+            width: 100%;
+            height: 1px;
+            margin-top: -2px;
+            background-color: $accent-color;
+            opacity: 0.1;
+            transform: translateX(-100%);
+            transition: transform 0.4s, opacity 0.7s;
+        }
+
+        .respond-item-button-open {
+            display: block;
+        }
+
+        .respond-item-button-close {
+            display: none;
+        }
+    }
+
+    .respond-item-button:hover div {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .respond-item-button:hover span {
+        color: $accent-color;
+    }
+}
+
+// Width For Open Text And Photo Settings
+
+.respond-item {
+    &.respond1 {
+        .respond-item-photo {
+            background-image: url('../../../images/photo-Pelina.jpeg');
+            background-repeat: no-repeat;
+            background-size: 270% auto;
+            background-position: 58% 0%;
+        }
+
+        // p {
+        //     &.open {
+        //         height: 572px;
+
+        //         @media (max-width: 720px) {
+        //             height: 532px;
+        //         }
+        //     }
+        // }
+    }
+
+    &.respond2 {
+        .respond-item-photo {
+            background-image: url('../../../images/photo-Brovko.jpeg');
+            background-repeat: no-repeat;
+            background-size: 290% auto;
+            background-position: 58% 15%;
+        }
+
+        // p {
+        //     &.open {
+        //         height: 154px;
+
+        //         @media (max-width: 720px) {
+        //             height: 152px;
+        //         }
+        //     }
+        // }
+    }
+
+    &.respond3 {
+        .respond-item-photo {
+            background-image: url('../../../images/photo-Mulberg.jpeg');
+            background-repeat: no-repeat;
+            background-size: 230% auto;
+            background-position: 50% 0%;
+        }
+
+        // p {
+        //     &.open {
+        //         height: 330px;
+
+        //         @media (max-width: 720px) {
+        //             height: 304px;
+        //         }
+        //     }
+        // }
+    }
+
+    &.respond4 {
+        .respond-item-photo {
+            background-image: url('../../../images/photo-Kovalenko.jpeg');
+            background-repeat: no-repeat;
+            background-size: 370% auto;
+            background-position: 50% 8%;
+        }
+
+        // p {
+        //     &.open {
+        //         height: 220px;
+
+        //         @media (max-width: 720px) {
+        //             height: 209px;
+        //         }
+        //     }
+        // }
+    }
+
+    &.respond5 {
+        .respond-item-photo {
+            background-image: url('../../../images/photo-Oksana.png');
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-position: 50% 8%;
+        }
+
+        // p {
+        //     &.open {
+        //         height: 374px;
+
+        //         @media (max-width: 720px) {
+        //             height: 342px;
+        //         }
+        //     }
+        // }
+    }
+
+    &.respond6 {
+        .respond-item-photo {
+            border: 0.5px solid $black;
+            background-image: url('../../../images/photo-Kanyuk.png');
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-position: 0% 20%;
+        }
+
+        // p {
+        //     &.open {
+        //         height: 154px;
+
+        //         @media (max-width: 720px) {
+        //             height: 133px;
+        //         }
+        //     }
+        // }
+    }
+
+    &.respond7 {
+        .respond-item-photo {
+            min-width: 82px;
+            position: relative;
+            overflow: hidden;
+
+            &:after {
+                content: '';
+                width: 300%;
+                height: 300%;
+                position: absolute;
+                left: -129px;
+                top: -93px;
+                transform: rotate(20deg);
+                background-image: url('../../../images/photo-Onyschkevych.jpeg');
+                background-repeat: no-repeat;
+                background-size: 62% auto;
+                background-position: 130% 60%;
+            }
+        }
+
+        // p {
+        //     &.open {
+        //         height: 484px;
+
+        //         @media (max-width: 720px) {
+        //             height: 456px;
+        //         }
+        //     }
+        // }
+    }
+
+    &.respond8 {
+        .respond-item-photo {
+            background-image: url('../../../images/photo-Klischuk.jpeg');
+            background-repeat: no-repeat;
+            background-size: 550% auto;
+            background-position: 53% 12%;
+        }
+
+        // p {
+        //     &.open {
+        //         height: 176px;
+
+        //         @media (max-width: 720px) {
+        //             height: 171px;
+        //         }
+        //     }
+        // }
+    }
+
+    &.respond9 {
+        .respond-item-photo {
+            background-image: url('../../../images/photo-Rinsevych.jpeg');
+            background-repeat: no-repeat;
+            background-size: 430% auto;
+            background-position: 53% 22%;
+        }
+
+        // p {
+        //     &.open {
+        //         height: 154px;
+
+        //         @media (max-width: 720px) {
+        //             height: 133px;
+        //         }
+        //     }
+        // }
+    }
+
+    &.respond10 {
+        .respond-item-photo {
+            background-image: url('../../../images/photo-Falendysch.jpg');
+            background-repeat: no-repeat;
+            background-size: 600% auto;
+            background-position: 51% 32%;
+        }
+    }
+
+    &.respond11 {
+        .respond-item-photo {
+            background-image: url('../../../images/photo-Iroduyck.jpg');
+            background-repeat: no-repeat;
+            background-size: 290% auto;
+            background-position: 47% 26%;
+        }
+    }
+
+    &.respond12 {
+        .respond-item-photo {
+            min-width: 82px;
+            background-image: url('../../../images/photo-Ponomarenko.jpg');
+            background-repeat: no-repeat;
+            background-size: 190% auto;
+            background-position: 47% 7%;
+        }
+    }
+
+    &.respond13 {
+        .respond-item-photo {
+            min-width: 82px;
+            background-image: url('../../../images/photo-Kochanchyk.jpg');
+            background-repeat: no-repeat;
+            background-size: 190% auto;
+            background-position: 47% 7%;
+        }
+    }
+
+    &.respond14 {
+        .respond-item-photo {
+            background-image: url('../../../images/photo-Fiesta.jpg');
+            background-repeat: no-repeat;
+            background-size: 600% auto;
+            background-position: 51% 17%;
+        }
+    }
+
+    &.respond15 {
+        .respond-item-photo {
+            background-image: url('../../../images/photo-More.jpg');
+            background-repeat: no-repeat;
+            background-size: 350% auto;
+            background-position: 55% 14%;
+        }
+    }
+
+    &.respond16 {
+        .respond-item-photo {
+            background-image: url('../../../images/photo-Kristina.jpg');
+            background-repeat: no-repeat;
+            background-size: 470% auto;
+            background-position: 49% 14%;
+        }
+    }
+
+    &.respond17 {
+        .respond-item-photo {
+            background-image: url('../../../images/photo-Darneva.jpg');
+            background-repeat: no-repeat;
+            background-size: 250% auto;
+            background-position: 54% 17%;
+        }
+    }
+
+    &.respond18 {
+        .respond-item-photo {
+            background-image: url('../../../images/photo-Dotyk.jpg');
+            background-repeat: no-repeat;
+            background-size: 201% auto;
+            background-position: 51% 18%;
+        }
+    }
+
+    &.respond19 {
+        .respond-item-photo {
+            background-image: url('../../../images/photo-Flora.jpg');
+            background-repeat: no-repeat;
+            background-size: 200% auto;
+            background-position: 45% 14%;
+        }
+    }
+
+    &.respond20 {
+        .respond-item-photo {
+            background-image: url('../../../images/photo-Suhovetska.jpg');
+            background-repeat: no-repeat;
+            background-size: 210% auto;
+            background-position: 50% 28%;
+        }
+    }
+
+    &.respond21 {
+        .respond-item-photo {
+            background-image: url('../../../images/photo-Batun.jpg');
+            background-repeat: no-repeat;
+            background-size: 550% auto;
+            background-position: 48% 32%;
+        }
+    }
+
+    &.respond22 {
+        .respond-item-photo {
+            background-image: url('../../../images/photo-Anastasia.jpg');
+            background-repeat: no-repeat;
+            background-size: 350% auto;
+            background-position: 45% 14%;
+        }
+    }
+
+    &.respond23 {
+        .respond-item-photo {
+            background-image: url('../../../images/photo-Kateryna.jpeg');
+            background-repeat: no-repeat;
+            background-size: 350% auto;
+            background-position: 37% 16%;
+        }
+    }
+
+    &.respond24 {
+        .respond-item-photo {
+            min-width: 82px;
+            background-image: url('../../../images/photo-Cherednychenko.jpg');
+            background-repeat: no-repeat;
+            background-size: 430% auto;
+            background-position: 57% 43%;
+        }
+    }
+
+    &.respond25 {
+        .respond-item-photo {
+            background-image: url('../../../images/photo-Ochrim.jpg');
+            background-repeat: no-repeat;
+            background-size: 180% auto;
+            background-position: 59% 30%;
+        }
+    }
+}

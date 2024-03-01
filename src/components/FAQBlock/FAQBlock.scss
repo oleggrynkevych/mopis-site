@@ -1,0 +1,63 @@
+@use '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.faq-block {
+    width: 100%;
+    padding-bottom: 192px;
+    color: $black;
+    @include mixins.flex(row, center, center);
+
+    @media (max-width: 850px) {
+        padding-bottom: 96px;
+    }
+
+    .faq-block-container {
+        width: 100%;
+        max-width: 794px;
+        @include mixins.flex(column, flex-start, flex-start);
+
+        @media (max-width: 1260px) {
+            width: calc(100% - 40px);
+        }
+
+        @media (max-width: 500px) {
+            width: calc(100% - 32px);
+        }
+
+        .faq-block-photo {
+            width: 100%;
+            height: 283px;
+            margin-bottom: 20px;
+            border-radius: 145.5px 145.5px 0px 0px;
+            background-image: url('../../images/photo-for-faq-block.jpeg');
+            background-repeat: no-repeat;
+            background-size: 135% auto;
+            background-position: 98% 43%;
+
+            @media (max-width: 600px) {
+                height: 165px;
+            }
+
+            @media (max-width: 500px) {
+                border-radius: 70px 70px 0px 0px;
+                background-size: 160% auto;
+                background-position: 83% 43%;
+            }
+        }
+
+        h3 {
+            margin: 0 0 48px 0;
+            text-transform: uppercase;
+            @include mixins.font(Forum, 60px, normal, 400, 120%);
+
+            @media (max-width: 600px) {
+                @include mixins.font(Forum, 40px, normal, 400, 120%);
+            }
+        }
+
+        .faq-block-info-box {
+            width: 100%;
+            @include mixins.flex(column, flex-start, flex-start);
+        }
+    }
+}

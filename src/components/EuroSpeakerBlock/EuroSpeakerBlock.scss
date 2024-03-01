@@ -1,0 +1,286 @@
+@use '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.eurospeaker-block {
+    width: 100%;
+    margin-bottom: 192px;
+    color: $black;
+    overflow: hidden;
+    padding-top: 30px;
+    @include mixins.flex(row, center, center);
+
+    @media (max-width: 850px) {
+        margin-bottom: 96px;
+    }
+
+    .eurospeaker-block-container {
+        width: 100%;
+        max-width: 1200px;
+        @include mixins.flex(column, flex-start, flex-start);
+
+        @media (max-width: 1260px) {
+            width: calc(100% - 40px);
+        }
+
+        @media (max-width: 850px) {
+            @include mixins.flex(column, flex-start, center);
+        }
+
+        @media (max-width: 500px) {
+            width: calc(100% - 32px);
+        }
+
+        .eurospeaker-block-head {
+            width: 100%;
+            margin-bottom: 48px;
+            @include mixins.flex(row, space-between, center);
+
+            @media (max-width: 1260px) {
+                gap: 8px;
+                @include mixins.flex(column, flex-start, flex-start);
+            }
+
+            @media (max-width: 850px) {
+                width: auto;
+                margin-bottom: 108px;
+                @include mixins.flex(column, flex-start, center);
+            }
+
+            h3 {
+                margin: 0;
+                text-transform: uppercase;
+                @include mixins.font(Forum, 60px, normal, 400, 120%);
+
+                @media (max-width: 1260px) {
+                    order: 2;
+                }
+
+                @media (max-width: 800px) {
+                    text-align: center;
+                    @include mixins.font(Forum, 40px, normal, 400, 120%);
+                }
+            }
+
+            div {
+                width: 154px;
+                height: 32px;
+                background-color: $accent-color;
+                color: $main-color;
+                border-radius: 1000px;
+                border: 1px solid $accent-color;
+                @include mixins.font(Forum, 18px, normal, 400, 120%);
+                @include mixins.flex(column, center, center);
+
+                @media (max-width: 1260px) {
+                    order: 1;
+                }
+            }
+        }
+
+        .eurospeaker-block-info-box {
+            width: 100%;
+            position: relative;
+            gap: 20px;
+            @include mixins.flex(row, space-between, flex-start);
+        }
+    }
+}
+
+
+//
+
+.eurospeaker-item {
+    display: flex !important;
+    @include mixins.flex(column, flex-start, flex-start);
+
+    .eurospeaker-item-photo {
+        width: 387px;
+        height: 417px;
+        margin-bottom: 32px;
+        border-radius: 295px 295px 0px 0px;
+
+        @media (max-width: 800px) {
+            width: 320px;
+            height: 340px;
+        }
+        
+        &.speaker1 {
+            background-image: url('../../images/speaker-Mikheeva.jpeg');
+            background-repeat: no-repeat;
+            background-size: 200% auto;
+            background-position: 35% 42%;
+        }
+
+        &.speaker2 {
+            background-image: url('../../images/speaker-Klocek.jpeg');
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-position: 30% 0%;
+        }
+
+        &.speaker3 {
+            background-image: url('../../images/speaker-Louisiane.png');
+            background-repeat: no-repeat;
+            background-size: 170% auto;
+            background-position: 55% 18%;
+        }
+    }
+
+    .eurospeaker-item-nickname {
+        color: $accent-color;
+        margin-bottom: 4px;
+        @include mixins.font(Forum, 14px, normal, 400, 120%);
+    }
+
+    .eurospeaker-item-name {
+        margin-bottom: 16px;
+        @include mixins.font(Forum, 40px, normal, 400, 120%);
+
+        @media (max-width: 800px) {
+            @include mixins.font(Forum, 32px, normal, 400, 120%);
+        }
+    }
+
+    p {
+        width: 350px;
+        margin: 0 0 16px 0;
+        @include mixins.font(Forum, 18px, normal, 400, 120%);
+
+        @media (max-width: 800px) {
+            width: calc(100% - 20px);
+            @include mixins.font(Forum, 16px, normal, 400, 120%);
+        }
+    }
+
+    .eurospeaker-item-theme-title {
+        text-transform: uppercase;
+        @include mixins.font(Forum, 18px, normal, 400, 100%);
+
+        @media (max-width: 800px) {
+            @include mixins.font(Forum, 16px, normal, 400, 100%);
+        }
+    }
+
+    .eurospeaker-item-theme {
+        @include mixins.font(Forum, 18px, normal, 400, 120%);
+
+        @media (max-width: 800px) {
+            @include mixins.font(Forum, 16px, normal, 400, 120%);
+        }
+    }
+}
+
+// Slider Styles
+
+.eurospeaker-block-info-box {
+    .slick-slider {
+        width: 100% !important;
+        position: static !important;
+
+        @media (max-width: 1260px) {
+            width: 407px !important;
+        }
+
+        @media (max-width: 800px) {
+            width: 340px !important;
+        }
+    }
+
+    .slick-track{
+        display: flex !important;
+        width: auto !important;
+    }
+
+    .slick-list {
+        overflow: visible !important;
+    }
+
+    .slick-slide {
+        width: 407px !important;
+        min-width: 407px !important;
+
+        @media (max-width: 800px) {
+            width: 340px !important;
+            min-width: 340px !important;
+        }
+    }
+
+    .slick-dots {
+        display: none !important;
+    }
+
+    // Arrows
+
+    .slick-arrow{
+        top: -88px !important;
+        width: 81px !important;
+        height: 81px !important;
+        border: 1px solid $accent-color !important;
+        background-color: $transparent !important;
+        border-radius: 10000px;
+        transition: all 0.4s ease-in-out;
+
+
+        @media (max-width: 850px) {
+            top: -62px !important;
+            width: 60px !important;
+            height: 60px !important;
+        }
+    }
+
+    .slick-arrow:hover {
+        background-color: $accent-color !important;
+    }
+
+    .slick-prev {
+        left: unset !important;
+        right: 101px !important;
+
+        @media (max-width: 850px) {
+            right: 50% !important;
+        }
+    }
+
+    .slick-prev::before {
+        content: url('../../images/left-arrow.svg') !important;
+    }
+
+    .slick-prev:hover:before {
+        filter: contrast(5%) brightness(200%);
+    }
+
+    .slick-next {
+        right: 0px !important;
+
+        @media (max-width: 850px) {
+            right: 50% !important;
+            translate: calc(100% + 12px) 0%;
+        }
+    }
+
+    .slick-next::before {
+        content: url('../../images/right-arrow.svg') !important;
+    }
+
+    .slick-next:hover:before {
+        filter: contrast(5%) brightness(200%);
+    }
+
+    // Disabled Arrow
+
+    .slick-disabled{
+        border: 1px solid $accent-color-opacity !important;
+    }
+
+    .slick-disabled:before {
+        opacity: 0.5 !important;
+    }
+
+    .slick-disabled:hover{
+        background-color: $transparent !important;
+    }
+
+    .slick-disabled:hover::before{
+        filter: none !important;
+    }
+}

@@ -1,0 +1,52 @@
+@use '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+
+.program-block {
+    width: 100%;
+    margin-bottom: 192px;
+    color: $black;
+    @include mixins.flex(row, center, center);
+
+    @media (max-width: 850px) {
+        margin-bottom: 96px;
+    }
+
+    .program-block-container {
+        width: 100%;
+        max-width: 1200px;
+        @include mixins.flex(column, flex-start, center);
+
+        @media (max-width: 1260px) {
+            width: calc(100% - 40px);
+            margin: auto 20px;
+        }
+
+        @media (max-width: 500px) {
+            width: calc(100% - 32px);
+            margin: auto 16px;
+        }
+
+
+        h3 {
+            margin: 0 0 57px 0;
+            text-transform: uppercase;
+            @include mixins.font(Forum, 90px, normal, 400, 120%);
+
+            @media (max-width: 850px) {
+                margin: 0 0 32px 0;
+                @include mixins.font(Forum, 40px, normal, 400, 120%);
+            }
+        }
+
+        .program-block-info-box {
+            width: 100%;
+            gap: 40px;
+            @include mixins.flex(column, flex-start, center);
+
+            @media (max-width: 500px) {
+                gap: 32px;
+            }
+        }
+    }
+}

@@ -1,0 +1,66 @@
+@use '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+
+.description-item {
+    width: 692px;
+    height: 78px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid $line-color;
+    gap: 16px;
+    @include mixins.flex(row, flex-start, flex-start);
+
+    @media (max-width: 1100px) {
+        width: 592px;
+        height: auto;
+    }
+
+    @media (max-width: 850px) {
+        width: 100%;
+        padding-bottom: 16px;
+        gap: 8px;
+        @include mixins.flex(column, flex-start, flex-start);
+    }
+
+    .description-item-main {
+        height: 100%;
+        @include mixins.flex(column, space-between, flex-start);
+
+        @media (max-width: 850px) {
+            width: 100%;
+            @include mixins.flex(row, space-between, center);
+        }
+
+        span:first-child {
+            opacity: 0.5;
+            @include mixins.font(Forum, 14px, normal, 400, 120%);
+
+            @media (max-width: 850px) {
+                order: 2;
+            }
+        }
+
+        span:last-child {
+            color: $accent-color;
+            width: 236px;
+            @include mixins.font(Forum, 40px, normal, 400, 120%);
+
+            @media (max-width: 500px) {
+                @include mixins.font(Forum, 34px, normal, 400, 120%);
+            }
+        }
+    }
+
+    .description-item-text {
+        width: 65%;
+        @include mixins.font(Forum, 22px, normal, 400, 120%);
+
+        @media (max-width: 850px) {
+            width: 85%;
+        }
+
+        @media (max-width: 500px) {
+            width: 87%;
+            @include mixins.font(Forum, 18px, normal, 400, 120%);
+        }
+    }
+}

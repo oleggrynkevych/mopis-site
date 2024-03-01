@@ -1,0 +1,30 @@
+@use '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.privacy-policy {
+    width: 100%;
+    height: calc(100dvh - 140px);
+    padding: 100px 0 40px 0;
+    @include mixins.flex(row, center, center);
+
+    @media (max-width: 500px) {
+        height: calc(100dvh - 130px);
+        padding: 90px 0 40px 0;
+    }
+
+    .privacy-policy-container {
+        width: calc(100% - 80px);
+        height: 100%;
+        max-width: 650px;
+
+        @media (max-width: 500px) {
+            width: calc(100% - 32px);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    }
+}

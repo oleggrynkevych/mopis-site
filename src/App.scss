@@ -1,0 +1,17 @@
+@use './styles/mixins.scss';
+@import './styles/variables.scss';
+
+a {
+    text-decoration: none;
+}
+
+.app-container {
+    margin-bottom: 100vh;
+    background-color: $main-color;
+    position: relative;
+    z-index: 2;
+
+    @media (max-width: 720px) {
+        margin-bottom: 0px;
+    }
+}

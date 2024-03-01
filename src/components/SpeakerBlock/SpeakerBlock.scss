@@ -1,0 +1,301 @@
+@use '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.speaker-block {
+    width: 100%;
+    margin-bottom: 162px;
+    color: $black;
+    overflow: hidden;
+    padding-top: 30px;
+    @include mixins.flex(row, center, center);
+
+    @media (max-width: 850px) {
+        margin-bottom: 66px;
+    }
+
+    .speaker-block-container {
+        width: 100%;
+        max-width: 1200px;
+        @include mixins.flex(column, flex-start, flex-start);
+
+        @media (max-width: 1260px) {
+            width: calc(100% - 40px);
+        }
+
+        @media (max-width: 800px) {
+            @include mixins.flex(column, flex-start, center);
+        }
+
+        @media (max-width: 500px) {
+            width: calc(100% - 32px);
+        }
+
+        h3 {
+            margin: 0 0 48px 0;
+            text-transform: uppercase;
+            @include mixins.font(Forum, 60px, normal, 400, 120%);
+
+            @media (max-width: 800px) {
+                width: 100%;
+                margin: 0 0 108px 0;
+                text-align: center;
+                @include mixins.font(Forum, 40px, normal, 400, 120%);
+            }
+        }
+
+        .speaker-block-info-box {
+            position: relative;
+            width: 100%;
+            @include mixins.flex(row, flex-start, flex-start);
+        }
+    }
+}
+
+
+// Speaker Card Styles
+
+.speaker-item{
+    display: flex !important;
+    @include mixins.flex(column, flex-start, flex-start);
+
+    .speaker-item-photo {
+        width: 387px;
+        height: 417px;
+        margin: 0 0 32px 0;
+        border-radius: 295px 295px 0px 0px;
+
+        @media (max-width: 800px) {
+            width: 320px;
+            height: 340px;
+        }
+
+        &.speaker1 {
+            background-image: url('../../images/photo-Vilchuk.jpeg');
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-position: 80% 0%;
+        }
+
+        &.speaker2 {
+            background-image: url('../../images/photo-Labinskiy.jpeg');
+            background-repeat: no-repeat;
+            background-size: 160% auto;
+            background-position: 10% 5%;
+        }
+
+        &.speaker3 {
+            background-image: url('../../images/photo-Saikai.jpeg');
+            background-repeat: no-repeat;
+            background-size: 150% auto;
+            background-position: 50% 14%;
+        }
+
+        &.speaker4 {
+            background-image: url('../../images/photo-Mayherkevych.jpg');
+            background-repeat: no-repeat;
+            background-size: 130% auto;
+            background-position: 60% 0%;
+        }
+
+        &.speaker5 {
+            background-image: url('../../images/photo-Sviderska.jpg');
+            background-repeat: no-repeat;
+            background-size: 130% auto;
+            background-position: 70% 0%;
+            
+        }
+
+        // &.speaker6 {
+        //     background-image: url('../../images/photo-Kornelyuck.jpg');
+        //     background-repeat: no-repeat;
+        //     background-size: 160% auto;
+        //     background-position: 60% 5%;
+        // }
+
+        &.speaker6 {
+            background-image: url('../../images/photo-Galamai.jpg');
+            background-repeat: no-repeat;
+            background-size: 280% auto;
+            background-position: 50% 15%;
+        }
+
+        &.speaker7 {
+            background-image: url('../../images/photo-Ventyk.jpg');
+            background-repeat: no-repeat;
+            background-size: 200% auto;
+            background-position: 44% 3%;
+        }
+
+        &.speaker8 {
+            background-image: url('../../images/photo-Fadyasch.jpeg');
+            background-repeat: no-repeat;
+            background-size: 130% auto;
+            background-position: 45% 0%;
+        }
+
+        &.speaker9 {
+            background-image: url('../../images/photo-Chudnivec.jpeg');
+            background-repeat: no-repeat;
+            background-size: 150% auto;
+            background-position: 45% 34%;
+        }
+    }
+
+    .speaker-item-nickname {
+        color: $accent-color;
+        margin-bottom: 4px;
+        @include mixins.font(Forum, 14px, normal, 400, 120%);
+    }
+
+    .speaker-item-name {
+        margin-bottom: 16px;
+        @include mixins.font(Forum, 40px, normal, 400, 120%);
+
+        @media (max-width: 800px) {
+            @include mixins.font(Forum, 32px, normal, 400, 90%);
+        }
+    }
+
+    p {
+        width: 350px;
+        height: 65px;
+        margin: 0 0 16px 0;
+        @include mixins.font(Forum, 18px, normal, 400, 120%);
+
+        @media (max-width: 800px) {
+            height: 58px;
+            width: calc(100% - 20px);
+            @include mixins.font(Forum, 16px, normal, 400, 120%);
+        }
+    }
+
+    .speaker-item-theme-title {
+        text-transform: uppercase;
+        @include mixins.font(Forum, 18px, normal, 400, 100%);
+
+        @media (max-width: 800px) {
+            @include mixins.font(Forum, 16px, normal, 400, 100%);
+        }
+    }
+
+    .speaker-item-theme {
+        width: 350px;
+        @include mixins.font(Forum, 18px, normal, 400, 120%);
+
+        @media (max-width: 800px) {
+            width: calc(100% - 20px);
+            @include mixins.font(Forum, 16px, normal, 400, 120%);
+        }
+    }
+}
+
+
+// Slider Styles
+
+.speaker-block-info-box {
+    .slick-slider {
+        width: 407px !important;
+        position: static !important;
+
+        @media (max-width: 800px) {
+            width: 340px !important;
+        }
+    }
+
+    .slick-track{
+        display: flex !important;
+        width: auto !important;
+    }
+
+    .slick-list {
+        overflow: visible !important;
+    }
+
+    .slick-slide {
+        width: 407px !important;
+        min-width: 407px !important;
+
+        @media (max-width: 800px) {
+            width: 340px !important;
+            min-width: 340px !important;
+        }
+    }
+
+    .slick-dots {
+        display: none !important;
+    }
+
+    // Arrows
+
+    .slick-arrow{
+        top: -88px !important;
+        width: 81px !important;
+        height: 81px !important;
+        border: 1px solid $accent-color !important;
+        background-color: $transparent !important;
+        border-radius: 10000px;
+        transition: all 0.4s ease-in-out;
+
+        @media (max-width: 800px) {
+            top: -62px !important;
+            width: 60px !important;
+            height: 60px !important;
+        }
+    }
+
+    .slick-arrow:hover {
+        background-color: $accent-color !important;
+    }
+
+    .slick-prev {
+        left: unset !important;
+        right: 101px !important;
+
+        @media (max-width: 800px) {
+            right: 50% !important;
+        }
+    }
+
+    .slick-prev::before {
+        content: url('../../images/left-arrow.svg') !important;
+    }
+
+    .slick-prev:hover:before {
+        filter: contrast(5%) brightness(200%);
+    }
+
+    .slick-next {
+        right: 0px !important;
+
+        @media (max-width: 800px) {
+            right: 50% !important;
+            translate: calc(100% + 12px) 0%;
+        }
+    }
+
+    .slick-next::before {
+        content: url('../../images/right-arrow.svg') !important;
+    }
+
+    .slick-next:hover:before {
+        filter: contrast(5%) brightness(200%);
+    }
+
+    // Disabled Arrow
+
+    .slick-disabled{
+        border: 1px solid $accent-color-opacity !important;
+    }
+
+    .slick-disabled:before {
+        opacity: 0.5 !important;
+    }
+
+    .slick-disabled:hover{
+        background-color: $transparent !important;
+    }
+
+    .slick-disabled:hover::before{
+        filter: none !important;
+    }
+}

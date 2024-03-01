@@ -1,0 +1,285 @@
+@use '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.welcome-section {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 192px;
+    padding-top: 87px;
+    @include mixins.flex(row, center, center);
+
+    @media (max-width: 850px) {
+        margin-bottom: 96px;
+    }
+
+    @media (max-width: 500px) {
+        padding-top: 78px;
+    }
+
+    .welcome-section-container {
+        width: 100%;
+        height: 100%;
+        max-width: 1200px;
+        @include mixins.flex(column, flex-start, center);
+
+        @media (max-width: 1260px) {
+            width: calc(100% - 40px);
+            margin: auto 20px;
+        }
+
+        @media (max-width: 500px) {
+            width: calc(100% - 32px);
+            margin: auto 16px;
+        }
+
+        .welcome-section-container-text-block {
+            width: 100%;
+            margin-bottom: 36px;
+            @include mixins.flex(row, space-between, flex-start);
+
+            @media (max-width: 1200px) {
+                margin-bottom: 56px;
+                @include mixins.flex(column, flex-start, center);
+            }
+            
+            @media (max-width: 880px) {
+                margin-bottom: 16px;
+            }
+        }
+    }
+}
+
+
+
+// Styles For Main Text
+
+.welcome-section-text {
+    width: 80%;
+    margin-top: 47px;
+    position: relative;
+    flex-wrap: wrap;
+    @include mixins.flex(row, flex-start, center);
+
+    @media (max-width: 1200px) {
+       width: 90%;
+       @include mixins.flex(row, center, center);
+    }
+
+    @media (max-width: 1060px) {
+        width: 100%;
+        @include mixins.flex(row, center, center);
+    }
+
+    @media (max-width: 960px) {
+        @include mixins.flex(row, space-between, center);
+    }
+
+    @media (max-width: 880px) {
+        margin-top: -22px;
+        @include mixins.flex(column, flex-start, center);
+    }
+
+    .welcome-section-first-text-box {
+        width: 100%;
+
+        @media (max-width: 880px) {
+            margin-bottom: 5px;
+            order: 2;
+            @include mixins.flex(column, center, center);
+        }
+
+        h1 {
+            color: $accent-color;
+            margin: 0 0 0 5px;
+            @include mixins.font(Forum, 18px, normal, 400, 110%);
+
+            @media (max-width: 880px) {
+                margin: 0 0 0 0;
+                @include mixins.font(Forum, 12px, normal, 400, 100%);
+            }
+        }
+
+        span {
+            text-transform: uppercase;
+            @include mixins.font(Forum, 100px, normal, 400, 110%);
+
+            @media (max-width: 880px) {
+                margin: 0 0 0 0;
+                @include mixins.font(Forum, 55px, normal, 400, 120%);
+            }
+        }
+    }
+
+    a {
+        @media (max-width: 880px) {
+            order: 6;
+        }
+    }
+
+    .welcome-section-button {
+        width: 273px;
+        height: 82px;
+        margin: 5px 0 0 80px;
+        background-color: $transparent;
+        outline: none;
+        border-radius: 1000px;
+        border: 1px solid $accent-color;
+        color: $accent-color;
+        cursor: pointer;
+        transition: all 0.4s ease-in-out;
+        @include mixins.font(Forum, 22px, normal, 400, 110%);
+
+        &:hover {
+            background-color: $accent-color;
+            color: $main-color;
+        }
+
+        @media (max-width: 880px) {
+            width: 241px;
+            height: 74px;
+            margin: 0 0 0 0;
+            order: 6;
+        }
+    }
+
+    .welcome-section-second-text {
+        width: 236px;
+        margin: 0;
+        @include mixins.font(Forum, 22px, normal, 400, 110%);
+
+        @media (max-width: 880px) {
+            width: 266px;
+            margin: 0 0 33px 0;
+            text-align: center;
+            order: 5;
+            @include mixins.font(Forum, 18px, normal, 400, 120%);
+        }
+    }
+
+    .welcome-section-third-text {
+        text-transform: uppercase;
+        margin: 0 0 0 45px;
+        @include mixins.font(Forum, 100px, normal, 400, 100%);
+
+        @media (max-width: 880px) {
+            margin: 0 0 10px 0;
+            order: 3;
+            @include mixins.font(Forum, 55px, normal, 400, 50%);
+        }
+    }
+
+    .welcome-section-fourth-text {
+        margin: 0 145px 0 0;
+        @include mixins.font(Noto Serif Display, 100px, italic, 300, 110%);
+
+        @media (max-width: 960px) {
+            margin: 0 0 0 128px;
+        }
+
+        @media (max-width: 880px) {
+            margin: 0 0 13px 0;
+            order: 4;
+            @include mixins.font(Noto Serif Display, 55px, italic, 300, 100%);
+        }
+    }
+
+    .welcome-section-key-image {
+        margin: 12px 0 0 57px;
+
+        @media (max-width: 960px) {
+            position: absolute;
+            right: -53px;
+            bottom: 0px;
+        }
+
+        @media (max-width: 880px) {
+            width: 139px;
+            position: relative;
+            right: 0px;
+            margin: 0 0 19px 0;
+            order: 1;
+        }
+    }
+
+    .welcome-section-key-video {
+        width: 620px;
+        height: auto;
+        position: absolute;
+        top: -175px;
+        left: 300px;
+        transform: rotate(15deg);
+    }
+}
+
+
+// Styles For Info Text
+
+.welcome-section-info {
+    margin: 78px 49px 0 0;
+    gap: 58px;
+    @include mixins.flex(column, flex-start, flex-start);
+
+    @media (max-width: 1200px) {
+        margin: 40px 0 0 0;
+        gap: 64px;
+        @include mixins.flex(row, space-between, flex-start);
+    }
+
+    @media (max-width: 880px) {
+        margin: 38px 0 0 0;
+    }
+
+    @media (max-width: 600px) {
+        width: 100%;
+        gap: 0;
+    }
+
+    .welcome-section-info-box {
+        @include mixins.flex(column, flex-start, flex-start);
+
+        span:first-child {
+            @include mixins.font(Forum, 16px, normal, 400, 120%);
+
+            @media (max-width: 1200px) {
+                @include mixins.font(Forum, 18px, normal, 400, 120%);
+            }
+
+            @media (max-width: 600px) {
+                @include mixins.font(Forum, 12px, normal, 400, 120%);
+            }
+        }
+
+        span:last-child {
+            color: $accent-color;
+            @include mixins.font(Forum, 32px, normal, 400, 110%);
+
+            @media (max-width: 1200px) {
+                @include mixins.font(Forum, 34px, normal, 400, 120%);
+            }
+
+            @media (max-width: 600px) {
+                @include mixins.font(Forum, 22px, normal, 400, 120%);
+            }
+        }
+    }
+}
+
+
+// Styles For Main Photo
+
+.welcome-section-photo {
+    width: 100%;
+    height: 486px;
+    background-image: url('../../images/main-photo.jpeg');
+    background-repeat: no-repeat;
+    background-size: 115% auto;
+    background-position: 0% 25%;
+
+    @media (max-width: 960px) {
+        height: 338px;
+    }
+
+    @media (max-width: 600px) {
+        height: 248px;
+    }
+}

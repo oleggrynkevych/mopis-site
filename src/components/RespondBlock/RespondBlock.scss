@@ -1,0 +1,154 @@
+@use '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.respond-block {
+    padding-bottom: 192px;
+    color: $black;
+    overflow: hidden;
+    padding-top: 30px;
+    @include mixins.flex(row, center, center);
+
+    @media (max-width: 850px) {
+        padding-bottom: 96px;
+    }
+
+    .respond-block-container {
+        width: 100%;
+        max-width: 1200px;
+        @include mixins.flex(column, flex-start, flex-start);
+
+        @media (max-width: 1260px) {
+            width: calc(100% - 40px);
+            margin: auto 20px;
+        }
+
+        @media (max-width: 500px) {
+            width: calc(100% - 32px);
+            margin: auto 16px;
+        }
+
+
+        h3 {
+            margin: 0 0 48px 0;
+            text-transform: uppercase;
+            @include mixins.font(Forum, 60px, normal, 400, 120%);
+
+            @media (max-width: 720px) {
+                margin: 0 0 22px 0;
+                @include mixins.font(Forum, 40px, normal, 400, 120%);
+            }
+        }
+
+        .respond-block-info-box {
+            position: relative;
+            width: 100%;
+            @include mixins.flex(row, flex-start, flex-start);
+        }
+    }
+}
+
+
+// Slider Styles
+
+.respond-block-info-box {
+    .slick-slider {
+        width: 407px !important;
+        position: static !important;
+
+        @media (max-width: 720px) {
+            width: 320px !important;
+        }
+    }
+
+    .slick-track{
+        display: flex !important;
+        width: auto !important;
+    }
+
+    .slick-list {
+        overflow: visible !important;
+    }
+
+    .slick-slide {
+        width: 407px !important;
+        min-width: 407px !important;
+
+        @media (max-width: 720px) {
+            width: 320px !important;
+            min-width: 320px !important;
+        }
+    }
+
+    .slick-dots {
+        display: none !important;
+    }
+
+    // Arrows
+
+    .slick-arrow{
+        top: -88px !important;
+        width: 81px !important;
+        height: 81px !important;
+        border: 1px solid $accent-color !important;
+        background-color: $transparent !important;
+        border-radius: 10000px;
+        transition: all 0.4s ease-in-out;
+
+        @media (max-width: 720px) {
+            top: -52px !important;
+            width: 60px !important;
+            height: 60px !important;
+        }
+    }
+
+    .slick-arrow:hover {
+        background-color: $accent-color !important;
+    }
+
+    .slick-prev {
+        left: unset !important;
+        right: 101px !important;
+
+        @media (max-width: 720px) {
+            right: 72px !important;
+        }
+    }
+
+    .slick-prev::before {
+        content: url('../../images/left-arrow.svg') !important;
+    }
+
+    .slick-prev:hover:before {
+        filter: contrast(5%) brightness(200%);
+    }
+
+    .slick-next {
+        right: 0px !important;
+    }
+
+    .slick-next::before {
+        content: url('../../images/right-arrow.svg') !important;
+    }
+
+    .slick-next:hover:before {
+        filter: contrast(5%) brightness(200%);
+    }
+
+    // Disabled Arrow
+
+    .slick-disabled{
+        border: 1px solid $accent-color-opacity !important;
+    }
+
+    .slick-disabled:before {
+        opacity: 0.5 !important;
+    }
+
+    .slick-disabled:hover{
+        background-color: $transparent !important;
+    }
+
+    .slick-disabled:hover::before{
+        filter: none !important;
+    }
+}
