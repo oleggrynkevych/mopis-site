@@ -2,9 +2,9 @@ export const priceData = [
     {
         name: "Beginner",
         addText: "для новачків",
-        price: 650,
-        prevPrice: 750,
-        payLink: "https://secure.wayforpay.com/button/b7decd25a5f7e",
+        price: 750,
+        prevPrice: 0,
+        payLink: "https://secure.wayforpay.com/button/b49ff2f801a39",
         avlServices: [
             "доступ до основних навчальних блоків",
             "2 зум зустрічі з Алісою: welcome та фінальна",
@@ -27,9 +27,9 @@ export const priceData = [
     {
         name: "Pro",
         addText: "обирає більшість",
-        price: 800,
-        prevPrice: 930,
-        payLink: "https://secure.wayforpay.com/button/b01be7d8b041e",
+        price: 930,
+        prevPrice: 0,
+        payLink: "https://secure.wayforpay.com/button/ba51c3b62b106",
         avlServices: [
             "доступ до основних навчальних блоків",
             "2 зум зустрічі з Алісою: welcome та фінальна",

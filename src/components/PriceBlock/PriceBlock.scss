@@ -105,7 +105,8 @@
                     background-color: $transparent;
                     outline: none;
                     border-radius: 1000px;
-                    border: 1px solid $black;
+                    border: 1px solid $accent-color;
+                    color: $accent-color;
                     cursor: pointer;
                     transition: all 0.4s ease-in-out;
                     @include mixins.font(Forum, 22px, normal, 400, 110%);
@@ -118,7 +119,7 @@
                     }
             
                     &:hover {
-                        background-color: $black;
+                        background-color: $accent-color;
                         color: $main-color;
                     }
                 }

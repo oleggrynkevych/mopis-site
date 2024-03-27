@@ -44,6 +44,7 @@
             
             @media (max-width: 880px) {
                 margin-bottom: 16px;
+                padding-top: 50px;
             }
         }
     }
@@ -79,6 +80,10 @@
         @include mixins.flex(column, flex-start, center);
     }
 
+    @media (max-width: 450px) {
+        @include mixins.flex(column, flex-start, flex-start);
+    }
+
     .welcome-section-first-text-box {
         width: 100%;
 
@@ -91,21 +96,35 @@
         h1 {
             color: $accent-color;
             margin: 0 0 0 5px;
+            position: relative;
+            z-index: 5;
             @include mixins.font(Forum, 18px, normal, 400, 110%);
 
             @media (max-width: 880px) {
                 margin: 0 0 0 0;
                 @include mixins.font(Forum, 12px, normal, 400, 100%);
             }
+
+            @media (max-width: 450px) {
+                width: 100%;
+                text-align: start;
+            }
         }
 
         span {
             text-transform: uppercase;
+            position: relative;
+            z-index: 5;
             @include mixins.font(Forum, 100px, normal, 400, 110%);
 
             @media (max-width: 880px) {
                 margin: 0 0 0 0;
                 @include mixins.font(Forum, 55px, normal, 400, 120%);
+            }
+
+            @media (max-width: 450px) {
+                width: 100%;
+                text-align: start;
             }
         }
     }
@@ -125,6 +144,8 @@
         border-radius: 1000px;
         border: 1px solid $accent-color;
         color: $accent-color;
+        position: relative;
+        z-index: 5;
         cursor: pointer;
         transition: all 0.4s ease-in-out;
         @include mixins.font(Forum, 22px, normal, 400, 110%);
@@ -134,7 +155,29 @@
             color: $main-color;
         }
 
+        // &.safari {
+        //     position: absolute;
+        //     top: 20px;
+        //     right: 0;
+
+        //     @media (max-width: 880px) {
+        //         position: static;
+        //         width: 241px;
+        //         height: 74px;
+        //         margin: 0 0 0 0;
+        //         order: 6;
+        //     }
+        // }
+
+        @media (max-width: 1000px) {
+            position: absolute;
+            top: 20px;
+            right: 0;
+            z-index: 5;
+        }
+
         @media (max-width: 880px) {
+            position: relative;
             width: 241px;
             height: 74px;
             margin: 0 0 0 0;
@@ -145,6 +188,8 @@
     .welcome-section-second-text {
         width: 236px;
         margin: 0;
+        position: relative;
+        z-index: 5;
         @include mixins.font(Forum, 22px, normal, 400, 110%);
 
         @media (max-width: 880px) {
@@ -154,22 +199,39 @@
             order: 5;
             @include mixins.font(Forum, 18px, normal, 400, 120%);
         }
+
+        @media (max-width: 450px) {
+            align-self: flex-start;
+        }
     }
 
     .welcome-section-third-text {
         text-transform: uppercase;
         margin: 0 0 0 45px;
+        position: relative;
+        z-index: 5;
         @include mixins.font(Forum, 100px, normal, 400, 100%);
+
+        &.zIndex {
+            z-index: 1;
+        }
 
         @media (max-width: 880px) {
             margin: 0 0 10px 0;
             order: 3;
             @include mixins.font(Forum, 55px, normal, 400, 50%);
         }
+
+        @media (max-width: 450px) {
+            width: 100%;
+            text-align: end;
+        }
     }
 
     .welcome-section-fourth-text {
         margin: 0 145px 0 0;
+        position: relative;
+        z-index: 5;
         @include mixins.font(Noto Serif Display, 100px, italic, 300, 110%);
 
         @media (max-width: 960px) {
@@ -181,23 +243,60 @@
             order: 4;
             @include mixins.font(Noto Serif Display, 55px, italic, 300, 100%);
         }
+
+        @media (max-width: 450px) {
+            width: 100%;
+            text-align: start;
+        }
     }
 
-    .welcome-section-key-image {
-        margin: 12px 0 0 57px;
+    // .welcome-section-key-image {
+    //     margin: 12px 0 0 57px;
 
-        @media (max-width: 960px) {
-            position: absolute;
-            right: -53px;
-            bottom: 0px;
+    //     @media (max-width: 960px) {
+    //         position: absolute;
+    //         right: -53px;
+    //         bottom: 0px;
+    //     }
+
+    //     @media (max-width: 880px) {
+    //         width: 139px;
+    //         position: relative;
+    //         right: 0px;
+    //         margin: 0 0 19px 0;
+    //         order: 1;
+    //     }
+    // }
+
+    .welcome-section-key-image {
+        position: absolute;
+        top: -135px;
+        left: 450px;   
+        z-index: 2;
+        pointer-events: none;
+
+        @media (max-width: 1000px) {
+            left: unset;
+            right: 190px;
         }
 
         @media (max-width: 880px) {
-            width: 139px;
-            position: relative;
+            width: 250px;
+            left: unset;
             right: 0px;
-            margin: 0 0 19px 0;
-            order: 1;
+            top: -60px;
+        }
+
+        @media (max-width: 600px) {
+            width: 170px;
+            right: -60px;
+            top: -50px;
+        }
+
+        @media (max-width: 450px) {
+            width: 190px;
+            right: -70px;
+            top: -95px;
         }
     }
 
@@ -207,7 +306,25 @@
         position: absolute;
         top: -175px;
         left: 300px;
+        z-index: 2;
         transform: rotate(15deg);
+        pointer-events: none;
+
+        @media (max-width: 1000px) {
+            left: 180px;
+        }
+
+        @media (max-width: 880px) {
+            width: 500px;
+            top: -100px;
+            left: unset;
+            right: -200px;
+        }
+
+        @media (max-width: 500px) {
+            width: 370px;
+            right: -160px;
+        }
     }
 }
 
@@ -217,6 +334,8 @@
 .welcome-section-info {
     margin: 78px 49px 0 0;
     gap: 58px;
+    position: relative;
+    z-index: 5;
     @include mixins.flex(column, flex-start, flex-start);
 
     @media (max-width: 1200px) {
@@ -274,6 +393,8 @@
     background-repeat: no-repeat;
     background-size: 115% auto;
     background-position: 0% 25%;
+    position: relative;
+    z-index: 5;
 
     @media (max-width: 960px) {
         height: 338px;

@@ -32,9 +32,9 @@ function PriceBlock () {
                             <h5>3 місця</h5>
                         </div>
                         
-                        <a href='https://t.me/alisamopis' target='_blank' rel='noreferrer'>
+                        <a href='https://secure.wayforpay.com/button/b0f8a2877f83d' target='_blank' rel='noreferrer'>
                             <button>
-                                <span>Написати запит</span>
+                                <span>Оплатити</span>
                             </button>
                         </a>
                     </div>
